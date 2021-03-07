@@ -7,7 +7,8 @@ import {
   Input,
   FormLabel,
   Button,
-  Spinner
+  Spinner,
+  createStandaloneToast
 } from "@chakra-ui/react"
 import { useState } from 'react'
 import { Container } from '../components/Container'
@@ -19,31 +20,43 @@ const SignUp = () => {
     username: '',
     email: ``,
     password: ``,
+    password2: ''
   });
 
-  const { username, email, password } = formData;
+  const { username, email, password, password2 } = formData;
 
   const [loading, setLoading] = useState(false);
+
+  const toast = createStandaloneToast()
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
   
-  // Handler for post request
   const onSubmit = (e) => {
     e.preventDefault();
 
-    //  Auth headers
     const config = {
       headers: {
         'Content-Type': 'application/json',
       }
     };
 
-    setLoading(true);
-    axios
+    if (password !== password2) {
+      toast({
+        title: "Erro.",
+        description: "Sua senha deve ser igual a repetir senha.",
+        status: "error",
+        duration: 9000,
+        isClosable: true,
+      })      
+    } else {
+
+      setLoading(true);
+
+      axios
       .post(
         `http://localhost:1337/auth/local/register`,
-        { username, email, password },
+        { username, email, password, password2 },
         config,
       )
       .then(res => {
@@ -54,6 +67,7 @@ const SignUp = () => {
           username: '',
           email: ``,      
           password: ``,
+          password2: ``
         })
       })
       .catch(err => {
@@ -61,7 +75,8 @@ const SignUp = () => {
         window.scrollTo(0, 0);
 
       });
-    };
+    }
+  };
 
   return (
     <Container height="100vh">
@@ -91,6 +106,13 @@ const SignUp = () => {
                 w="358px" 
                 placeholder="Senha" 
                 name="password"
+                onChange={e => onChange(e)}/>
+              <FormLabel mt={2}>Repetir senha</FormLabel>
+              <Input 
+                variant="filled" 
+                w="358px" 
+                placeholder="Repetir senha" 
+                name="password2"
                 mb={4} 
                 onChange={e => onChange(e)}/>
               <br />
