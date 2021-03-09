@@ -8,134 +8,98 @@ import {
   FormLabel,
   Button,
   Spinner,
-  createStandaloneToast
+  createStandaloneToast,
 } from "@chakra-ui/react"
+import { WarningTwoIcon } from '@chakra-ui/icons'
 import { useState } from 'react'
-import { Container } from '../components/Container'
-import { DarkModeSwitch } from '../components/DarkModeSwitch'
+import { useForm } from 'react-hook-form'
 import axios from 'axios'
 
+
 const SignUp = () => {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: ``,
-    password: ``,
-    password2: ''
-  });
-
-  const { username, email, password, password2 } = formData;
-
-  const [loading, setLoading] = useState(false);
+  const { register, errors, handleSubmit, watch } = useForm({
+    mode: "onBlur"
+  })  
 
   const toast = createStandaloneToast()
 
-  const onChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-    const config = {
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    };
-
-    if (password !== password2) {
-      toast({
-        title: "Erro.",
-        description: "Sua senha deve ser igual a repetir senha.",
-        status: "error",
-        duration: 9000,
-        isClosable: true,
-      })      
-    } else {
-
-      setLoading(true);
-
-      axios
-      .post(
-        `http://localhost:1337/auth/local/register`,
-        { username, email, password, password2 },
-        config,
-      )
-      .then(res => {
-        setLoading(false);
-        window.scrollTo(0, 0);
-
-        setFormData({
-          username: '',
-          email: ``,      
-          password: ``,
-          password2: ``
-        })
-      })
-      .catch(err => {
-        setLoading(false);
-        window.scrollTo(0, 0);
-
-      });
-    }
-  };
-
   return (
-    <Container height="100vh">
-      <DarkModeSwitch />
-      <Wrap>
-        <WrapItem flexDirection="column">
-        <Heading mt={10} as='h1' h="100px" size='3xl' bgGradient="linear(to-l, #7928CA, #FF0080)" bgClip="text">SignUp Page</Heading>
-          <Center mt={4}>
-            <FormControl isRequired>
-              <FormLabel>Nome</FormLabel>
-              <Input 
-                variant="filled" 
-                w="358px" 
-                placeholder="Nome"
-                name="username"
-                onChange={e => onChange(e)}/>
-              <FormLabel mt={2}>Email</FormLabel>
-              <Input 
-                variant="filled" 
-                w="358px" 
-                placeholder="Email"
-                name="email"
-                onChange={e => onChange(e)}/>
-              <FormLabel mt={2}>Senha</FormLabel>
-              <Input 
-                variant="filled" 
-                w="358px" 
-                placeholder="Senha" 
-                name="password"
-                onChange={e => onChange(e)}/>
-              <FormLabel mt={2}>Repetir senha</FormLabel>
-              <Input 
-                variant="filled" 
-                w="358px" 
-                placeholder="Repetir senha" 
-                name="password2"
-                mb={4} 
-                onChange={e => onChange(e)}/>
-              <br />
-              {loading ? (
-                <Spinner color="red.500" />
-              ) : (
-                <Button type="submit" onClick={e => onSubmit(e)}>SignUp</Button>
-              )}
-            </FormControl>
-          </Center>
-        </WrapItem>
-      </Wrap>
-    </Container>
-  )
-}
+    <Wrap spacing="30px" justify="center">
+      <FormControl w={[300, 400, 560]}>
+        <form onSubmit={handleSubmit(async(formData) => {
 
+          const response = await fetch(`http://localhost:1337/auth/local/register`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              username: formData.username,
+              email: formData.email,
+              password: formData.password,
+              password2: formData.password2,
+            })
+          })
 
-export const getServerSideProps = async () => {
+          const data = await response.json()
+
+          if (data.error) {
+            toast({
+              title: "Erro criando conta.",
+              description: "Por favor tente novamente.",
+              status: "error",
+              duration: 9000,
+              isClosable: true,
+            })    
+          } else {
+            window.alert("success")
+          }
+
+          console.log(data, "server data")
   
-  return {
-    props: {
-    }
-  }
+        })}>
+          <WrapItem flexDirection="column" alignSelf="center">
+            <FormLabel mt={8} htmlFor="username">Nome</FormLabel>
+            <Input name="username" placeholder="Nome"  id="username" ref={register({
+              required: "Nome obrigatorio"
+            })}/>
+            {errors.username ?(<p style={{ color: "red", fontWeight: "400" }}> <WarningTwoIcon /> {errors.username.message}.</p>) : null}
+          </WrapItem>
+          <WrapItem flexDirection="column">
+            <FormLabel htmlFor="email">Email</FormLabel>
+            <Input name="email" placeholder="Email" id="email" ref={register({
+              required: "Email obrigatorio",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "Email invalido"
+              }    
+            })}/>
+            {errors.email ?(<p style={{ color: "red", fontWeight: "400" }}> <WarningTwoIcon /> {errors.email.message}.</p>) : null}
+          </WrapItem>
+          <WrapItem flexDirection="column">
+            <FormLabel htmlFor="password">Senha</FormLabel>
+            <Input name="password" placeholder="Senha" id="password" ref={register({
+              required: "Senha obrigatoria",
+              minLength: {
+                value: 4,
+                message: "Digite pelo menos 4 caracteres"
+              }
+            })}/>
+            {errors.password ?(<p style={{ color: "red", fontWeight: "400" }}> <WarningTwoIcon /> {errors.password.message}.</p>) : null}
+          </WrapItem>
+          <WrapItem flexDirection="column">
+            <FormLabel htmlFor="password2">Repetir senha</FormLabel>
+            <Input name="password2" placeholder="Senha" id="password2" ref={register({
+              required: "Repetir senha obrigatorio",
+              validate: (value) => value === watch('password') || "Senhas nao compativeis."
+            })}/>
+            {errors.password2 ?(<p style={{ color: "red", fontWeight: "400" }}> <WarningTwoIcon /> {errors.password2.message}.</p>) : null}
+          </WrapItem>
+            <Button type="submit">SignUp</Button>
+        </form>
+      </FormControl>
+    </Wrap>
+  )
 }
 
 export default SignUp
