@@ -1,5 +1,4 @@
 import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react'
-import Router from 'next/router'
 
 import theme from '../theme'
 
