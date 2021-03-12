@@ -1,7 +1,4 @@
 import { 
-  Wrap,
-  WrapItem,
-  Progress, 
   FormControl,
   Input,
   FormLabel,
@@ -10,14 +7,20 @@ import {
   Heading,
   Select,
   createStandaloneToast,
+  Flex,
+  Center,
+  InputGroup, 
+  InputLeftElement
 } from "@chakra-ui/react"
-import { WarningTwoIcon } from '@chakra-ui/icons'
+import Image from 'next/image'
+import { WarningIcon, EmailIcon, CalendarIcon, LockIcon, UnlockIcon } from '@chakra-ui/icons'
+import { FaUser } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from "axios"
 
 
-const SignUp = () => {
+const Register = () => {
   const { register, errors, handleSubmit, watch } = useForm({
     mode: "all"
   })  
@@ -59,9 +62,10 @@ const SignUp = () => {
 
   return (
     <>
-    {formStep === 0 && <Progress size="sm" hasStripe value={10} />}
-
-    <Wrap bg="gray.800" height="100vh" color="gray.100" spacing="30px" justify="center">
+    <Flex height="100vh" bg="gray.800" color="gray.300" alignItems="center" justifyContent="center">
+      <Center width="45%" display={{ base: "none", lg: "block" }} justifyContent="center">
+        <Image src="/logo-kosmos.png" height="200px" width="540px"/>
+      </Center>
       <FormControl w={[300, 400, 600]}>
         <form onSubmit={handleSubmit(async(formData) => {
           setSubmitting(true)
@@ -75,11 +79,13 @@ const SignUp = () => {
               email: formData.email,
               password: formData.password,
               password2: formData.password2,
-              eventos: [formData.eventos]
+              eventos: [formData.eventos],
             })
           })
 
           const data = await response.json()
+
+          console.log(data, "server data")
           
           if (data.error) {
             toast({
@@ -88,77 +94,87 @@ const SignUp = () => {
               status: "error",
               duration: 9000,
               isClosable: true,
+              position: "top"
             })    
           } else {
-            window.alert("success")
+            toast({
+              title: "Conta criada com sucesso!.",
+              description: `Por favor verifique em seu email e "caixa de spam".`,
+              status: "success",
+              duration: 9000,
+              isClosable: true,
+              position: "top"
+            })    
           }
 
           setSubmitting(false)
         })}>
-
-          {/* Primeiro passo */}
-          {formStep === 0 && (
             <>
-            <WrapItem flexDirection="column" alignSelf="center">
-              <Heading as="h1" mt={10}>Passo 1</Heading>
-              <FormLabel mt={8} htmlFor="username">Nome</FormLabel>
-              <Input variant="filled" name="username" placeholder="Nome"  id="username" ref={register({
+            <Heading as="h1" mt={10}>Faça seu cadastro 🚀</Heading>
+            <FormLabel mt={8} htmlFor="username">Nome</FormLabel>
+            <InputGroup flexDirection="column">
+              <InputLeftElement pointerEvents="none" children={<FaUser />}/>
+              <Input variant="filled" type="text" name="username" placeholder="Nome" id="username" ref={register({
                 required: "Nome obrigatorio"
               })}/>
-              {errors.username ?(<small style={{ color: "red", fontWeight: "400" }}> <WarningTwoIcon /> {errors.username.message}.</small>) : null}
-            </WrapItem>
-            <WrapItem flexDirection="column">
-              <FormLabel htmlFor="email">Email</FormLabel>
-              <Input variant="filled" name="email" placeholder="Email" id="email" ref={register({
+              {errors.username ?(<small style={{ color: "red", fontWeight: "400" }}> <WarningIcon /> {errors.username.message}.</small>) : null}
+            </InputGroup>
+            <FormLabel mt={2} htmlFor="email">Email</FormLabel>
+            <InputGroup flexDirection="column">
+            <InputLeftElement pointerEvents="none" children={<EmailIcon />}/>
+              <Input variant="filled" name="email" type="email" placeholder="Email" id="email" ref={register({
                 required: "Email obrigatorio",
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                   message: "Email invalido"
                 }    
               })}/>
-              {errors.email ?(<small style={{ color: "red", fontWeight: "400" }}> <WarningTwoIcon /> {errors.email.message}.</small>) : null}
-            </WrapItem>
-            <WrapItem flexDirection="column">
-              <FormLabel htmlFor="password">Senha</FormLabel>
-              <Input variant="filled" name="password" placeholder="Senha" id="password" ref={register({
+              {errors.email ?(<small style={{ color: "red", fontWeight: "400" }}> <WarningIcon /> {errors.email.message}.</small>) : null}
+            </InputGroup>
+            <FormLabel mt={2} htmlFor="password">Senha</FormLabel>
+            <InputGroup flexDirection="column">
+            <InputLeftElement pointerEvents="none" children={<LockIcon />}/>
+              <Input variant="filled" type="password" name="password" placeholder="Senha" id="password" ref={register({
                 required: "Senha obrigatoria",
                 minLength: {
                   value: 4,
                   message: "Digite pelo menos 4 caracteres"
                 }
               })}/>
-              {errors.password ?(<small style={{ color: "red", fontWeight: "400" }}> <WarningTwoIcon /> {errors.password.message}.</small>) : null}
-            </WrapItem>
-            <WrapItem flexDirection="column">
-              <FormLabel htmlFor="password2">Repetir senha</FormLabel>
-              <Input variant="filled" name="password2" placeholder="Senha" id="password2" ref={register({
+              {errors.password ?(<small style={{ color: "red", fontWeight: "400" }}> <WarningIcon /> {errors.password.message}.</small>) : null}
+            </InputGroup>
+            <FormLabel mt={2} htmlFor="password2">Repetir senha</FormLabel>
+            <InputGroup flexDirection="column">
+            <InputLeftElement pointerEvents="none" children={<UnlockIcon />}/>
+              <Input variant="filled" type="password" name="password2" placeholder="Senha" id="password2" ref={register({
                 required: "Repetir senha obrigatorio",
                 validate: (value) => value === watch('password') || "Senhas nao compativeis."
               })}/>
-              {errors.password2 ?(<small style={{ color: "red", fontWeight: "400" }}> <WarningTwoIcon /> {errors.password2.message}.</small>) : null}
-            </WrapItem>
-            <WrapItem flexDirection="column">
-              <FormLabel htmlFor="password2">Eventos</FormLabel>
-              <Select variant="filled" color="gray.400" name="eventos" id="eventos" placeholder="Select option" ref={register({
+              {errors.password2 ?(<small style={{ color: "red", fontWeight: "400" }}> <WarningIcon /> {errors.password2.message}.</small>) : null}
+            </InputGroup>
+            <FormLabel mt={2} htmlFor="eventos">Eventos</FormLabel>
+            <InputGroup flexDirection="column">
+            <InputLeftElement pointerEvents="none" children={<CalendarIcon />}/>
+              <Select variant="filled" color="gray.400" name="eventos" id="eventos" placeholder="&nbsp;&nbsp; &nbsp; Selecione evento" ref={register({
                 required: "Evento obrigatorio",
               })}>
                 {events.map((item)=>{
                   return (
-                    <div key={item.id}>{item.nome}</div>
+                    <option value={item.id} key={item.id}>&nbsp;&nbsp; &nbsp; {item.nome}</option>
                   )
                 })}
               </Select>        
-              {errors.eventos &&(<small style={{ color: "red", fontWeight: "400" }}> <WarningTwoIcon /> {errors.eventos.message}.</small>)}    
-            </WrapItem>
-            <Button mt={3} type="button" onClick={nextStepForm}>Proximo</Button>
-          </>
-          )}
+              {errors.eventos &&(<small style={{ color: "red", fontWeight: "400" }}> <WarningIcon /> {errors.eventos.message}.</small>)}    
+            </InputGroup>
+            <InputGroup>
             {submitting ? <Spinner color="blue.500" size="lg" mt={3} /> : <Button mt={3} type="submit">Submit</Button>}
+            </InputGroup>
+          </>
         </form>
       </FormControl>
-    </Wrap>
+    </Flex>
     </>
   )
 }
 
-export default SignUp
+export default Register
