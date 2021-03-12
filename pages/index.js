@@ -40,7 +40,7 @@ const Register = () => {
   useEffect(() => {
     const fetchPost = async () => {
     try {
-      const response = await axios.get(`http://localhost:1337/eventos`);
+      const response = await axios.get(`https://kosmos-admin.herokuapp.com/eventos`);
       setEvents(response.data);
 
     }
@@ -69,7 +69,7 @@ const Register = () => {
       <FormControl w={[300, 400, 600]}>
         <form onSubmit={handleSubmit(async(formData) => {
           setSubmitting(true)
-          const response = await fetch(`http://localhost:1337/auth/local/register`, {
+          const response = await fetch(`https://kosmos-admin.herokuapp.com/auth/local/register`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
