@@ -40,7 +40,7 @@ const Register = () => {
   useEffect(() => {
     const fetchPost = async () => {
     try {
-      const response = await axios.get(`https://kosmos-admin.herokuapp.com/eventos`);
+      const response = await axios.get(`http://localhost:1337/eventos`);
       setEvents(response.data);
 
     }
@@ -64,12 +64,12 @@ const Register = () => {
     <>
     <Flex height="100vh" bg="gray.800" color="gray.300" alignItems="center" justifyContent="center">
       <Center width="45%" display={{ base: "none", lg: "block" }} justifyContent="center">
-        <Image src="/logo-kosmos.png" height="200px" width="540px"/>
+        <Image src="/logo-kosmos.png" height="140px" width="430px"/>
       </Center>
-      <FormControl w={[300, 400, 600]}>
+      <FormControl w={[300, 400, 500]}>
         <form onSubmit={handleSubmit(async(formData) => {
           setSubmitting(true)
-          const response = await fetch(`https://kosmos-admin.herokuapp.com/auth/local/register`, {
+          const response = await fetch(`http://localhost:1337/auth/local/register`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -110,16 +110,16 @@ const Register = () => {
           setSubmitting(false)
         })}>
             <>
-            <Heading as="h1" mt={10}>Faça seu cadastro 🚀</Heading>
-            <FormLabel mt={8} htmlFor="username">Nome</FormLabel>
+            <Heading as="h1">Faça seu cadastro 🚀</Heading>
+            <FormLabel mt={3} htmlFor="username">Nome</FormLabel>
             <InputGroup flexDirection="column">
               <InputLeftElement pointerEvents="none" children={<FaUser />}/>
-              <Input variant="filled" type="text" name="username" placeholder="Nome" id="username" ref={register({
+              <Input variant="filled" type="name" name="username" placeholder="Nome" id="username" ref={register({
                 required: "Nome obrigatorio"
               })}/>
-              {errors.username ?(<small style={{ color: "red", fontWeight: "400" }}> <WarningIcon /> {errors.username.message}.</small>) : null}
+              {errors.username ?(<small style={{ color: "red" }}> <WarningIcon /> {errors.username.message}.</small>) : null}
             </InputGroup>
-            <FormLabel mt={2} htmlFor="email">Email</FormLabel>
+            <FormLabel mt={1} htmlFor="email">Email</FormLabel>
             <InputGroup flexDirection="column">
             <InputLeftElement pointerEvents="none" children={<EmailIcon />}/>
               <Input variant="filled" name="email" type="email" placeholder="Email" id="email" ref={register({
@@ -129,9 +129,9 @@ const Register = () => {
                   message: "Email invalido"
                 }    
               })}/>
-              {errors.email ?(<small style={{ color: "red", fontWeight: "400" }}> <WarningIcon /> {errors.email.message}.</small>) : null}
+              {errors.email ?(<small style={{ color: "red" }}> <WarningIcon /> {errors.email.message}.</small>) : null}
             </InputGroup>
-            <FormLabel mt={2} htmlFor="password">Senha</FormLabel>
+            <FormLabel mt={1} htmlFor="password">Senha</FormLabel>
             <InputGroup flexDirection="column">
             <InputLeftElement pointerEvents="none" children={<LockIcon />}/>
               <Input variant="filled" type="password" name="password" placeholder="Senha" id="password" ref={register({
@@ -141,18 +141,18 @@ const Register = () => {
                   message: "Digite pelo menos 4 caracteres"
                 }
               })}/>
-              {errors.password ?(<small style={{ color: "red", fontWeight: "400" }}> <WarningIcon /> {errors.password.message}.</small>) : null}
+              {errors.password ?(<small style={{ color: "red" }}> <WarningIcon /> {errors.password.message}.</small>) : null}
             </InputGroup>
-            <FormLabel mt={2} htmlFor="password2">Repetir senha</FormLabel>
+            <FormLabel mt={1} htmlFor="password2">Repetir senha</FormLabel>
             <InputGroup flexDirection="column">
             <InputLeftElement pointerEvents="none" children={<UnlockIcon />}/>
               <Input variant="filled" type="password" name="password2" placeholder="Senha" id="password2" ref={register({
                 required: "Repetir senha obrigatorio",
                 validate: (value) => value === watch('password') || "Senhas nao compativeis."
               })}/>
-              {errors.password2 ?(<small style={{ color: "red", fontWeight: "400" }}> <WarningIcon /> {errors.password2.message}.</small>) : null}
+              {errors.password2 ?(<small style={{ color: "red" }}> <WarningIcon /> {errors.password2.message}.</small>) : null}
             </InputGroup>
-            <FormLabel mt={2} htmlFor="eventos">Eventos</FormLabel>
+            <FormLabel mt={1} htmlFor="eventos">Eventos</FormLabel>
             <InputGroup flexDirection="column">
             <InputLeftElement pointerEvents="none" children={<CalendarIcon />}/>
               <Select variant="filled" color="gray.400" name="eventos" id="eventos" placeholder="&nbsp;&nbsp; &nbsp; Selecione evento" ref={register({
@@ -164,7 +164,7 @@ const Register = () => {
                   )
                 })}
               </Select>        
-              {errors.eventos &&(<small style={{ color: "red", fontWeight: "400" }}> <WarningIcon /> {errors.eventos.message}.</small>)}    
+              {errors.eventos &&(<small style={{ color: "red" }}> <WarningIcon /> {errors.eventos.message}.</small>)}    
             </InputGroup>
             <InputGroup>
             {submitting ? <Spinner color="blue.500" size="lg" mt={3} /> : <Button mt={3} type="submit">Submit</Button>}
