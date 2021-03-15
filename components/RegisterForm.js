@@ -17,7 +17,7 @@ import { useState } from 'react'
 
 
 export const RegisterForm = (props) => {
-  const { register, errors, handleSubmit, watch } = useForm({
+  const { register, errors, handleSubmit, watch, reset } = useForm({
     mode: "all"
   })  
 
@@ -68,6 +68,7 @@ export const RegisterForm = (props) => {
       }
 
       setSubmitting(false)
+      reset()
     })}>
         <>
         <Heading as="h1">Faça seu cadastro 🚀</Heading>
