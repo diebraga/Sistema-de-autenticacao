@@ -128,7 +128,7 @@ export const RegisterForm = (props) => {
           {errors.eventos &&(<small style={{ color: "red" }}> <WarningIcon /> {errors.eventos.message}.</small>)}    
         </InputGroup>
         <InputGroup>
-        {submitting ? <Spinner color="blue.500" size="lg" mt={3} /> : <Button mt={3} type="submit">Submit</Button>}
+        {submitting ? <Spinner color="blue.500" size="lg" mt={3} /> : <Button mt={3} type="submit">Enviar</Button>}
         </InputGroup>
       </>
     </form>

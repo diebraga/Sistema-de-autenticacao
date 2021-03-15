@@ -10,13 +10,16 @@ import {
   InputGroup,
   InputLeftElement,
   Heading,
-  Spinner
+  Spinner,
+  Link
 } from "@chakra-ui/react"
 import { setCookie } from 'nookies'
 import Router from 'next/router'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import { WarningIcon, EmailIcon, LockIcon } from '@chakra-ui/icons'
+import Head from "next/head"
+import NextLink from 'next/link'
 
 
 const Login = () => {
@@ -29,7 +32,7 @@ const Login = () => {
   const toast = createStandaloneToast()
 
   return (
-    <Flex height="100vh" bg="gray.800" color="gray.300" alignItems="center" justifyContent="center">
+    <Flex height="100vh" bg="gray.800" color="gray.300" alignItems="center" justifyContent="center" flexDirection="column">
       <Center width="45%" display={{ base: "none", lg: "block" }} justifyContent="center">
         <Image src="/logo-kosmos.png" height="140px" width="430px"/>
       </Center>
@@ -71,6 +74,10 @@ const Login = () => {
           
           setSubmitting(false)
         })}>
+        <Head>
+          <title>Login | Kosmos</title>
+        </Head>
+
         <Heading as="h1">Faca seu login 🚀</Heading>
         <FormLabel mt={5} htmlFor="email">Email</FormLabel>
         <InputGroup flexDirection="column">
@@ -92,9 +99,12 @@ const Login = () => {
           })}/>
           {errors.password ?(<small style={{ color: "red" }}> <WarningIcon /> {errors.password.message}.</small>) : null}
         </InputGroup>
-        {submitting ? <Spinner color="blue.500" size="lg" mt={3} /> : <Button mt={3} type="submit">Submit</Button>}
+        {submitting ? <Spinner color="blue.500" size="lg" mt={3} /> : <Button mt={3} type="submit">Enviar</Button>}
         </form>
       </FormControl>
+      <NextLink href="/register">
+        <Link mt={3} color="blue.300">ainda nao tenho uma conta. ➔</Link>
+      </NextLink>
     </Flex>
   )
 }
