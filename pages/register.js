@@ -1,4 +1,4 @@
-import { Flex, Center, Link } from "@chakra-ui/react"
+import { Flex, Center, Link, Box } from "@chakra-ui/react"
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import axios from "axios"
@@ -34,14 +34,17 @@ const Register = () => {
       <Head>
         <title>Cadastro | Kosmos</title>
       </Head>
-      <Flex height="100vh" bg="gray.800" color="gray.300" alignItems="center" justifyContent="center" flexDirection="column">
-        <Center width="45%" display={{ base: "none", lg: "block" }} justifyContent="center">
+      <Flex height="100vh" bg="gray.800" color="gray.300" alignItems="center" justifyContent="center">
+        <Center width="40%" display={{ base: "none", lg: "block" }} justifyContent="center">
           <Image src="/logo-kosmos.png" height="140px" width="430px"/>
         </Center>
-        <RegisterForm events={events} />
-        <NextLink href="/login">
-          <Link mt={3} color="blue.300">Ja tenho uma conta. ➔</Link>
-        </NextLink>
+        <Box>
+          <RegisterForm events={events} />
+          <br/>
+          <NextLink href="/login">
+            <Link color="blue.300">Ja tenho uma conta. ➔</Link>
+          </NextLink>
+        </Box>
       </Flex>
     </>
   )
