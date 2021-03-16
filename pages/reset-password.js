@@ -31,7 +31,7 @@ const ResetPassword = () => {
 
   const router = useRouter()
   const {code} = router.query
-  console.log(code)
+  
   const [submitting, setSubmitting] = useState(false)
 
   const toast = createStandaloneToast()
@@ -73,10 +73,11 @@ const ResetPassword = () => {
                 duration: 9000,
                 isClosable: true,
                 position: "top"
-              })          
+              })      
+              setSubmitting(false)    
             });
                       
-            setSubmitting(false)
+            
           })}>
           <Head>
             <title>Esqueci minha senha | Kosmos</title>
