@@ -56,7 +56,7 @@ const ForgotPassword = () => {
 
             if (data.error) {
               toast({
-                title: "Erro de authenticacao.",
+                title: "Erro de envio.",
                 description: "Por favor tente novamente.",
                 status: "error",
                 duration: 9000,

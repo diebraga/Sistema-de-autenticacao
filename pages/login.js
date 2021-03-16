@@ -108,6 +108,10 @@ const Login = () => {
         <NextLink href="/register">
           <Link color="blue.300">ainda nao tenho uma conta. ➔</Link>
         </NextLink>
+            <br />
+        <NextLink href="/forgot-password">
+          <Link color="blue.300">esqueci minha senha. ➔</Link>
+        </NextLink>
       </Box>
     </Flex>
   )

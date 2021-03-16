@@ -107,7 +107,7 @@ export const RegisterForm = (props) => {
         <FormLabel mt={1} htmlFor="password2">Repetir senha</FormLabel>
         <InputGroup flexDirection="column">
         <InputLeftElement pointerEvents="none" children={<UnlockIcon />}/>
-          <Input variant="filled" type="password" name="password2" placeholder="Senha" id="password2" ref={register({
+          <Input variant="filled" type="password" name="password2" placeholder="Repetir senha" id="password2" ref={register({
             required: "Repetir senha obrigatorio",
             validate: (value) => value === watch('password') || "Senhas nao compativeis."
           })}/>
