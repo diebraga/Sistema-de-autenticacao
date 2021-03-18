@@ -53,7 +53,6 @@ const ResetPassword = () => {
             })
             .then(response => {
               Router.push("/login")
-              .then(
                 toast({
                   title: "Sua senha foi renovada com sucesso.",
                   description: "Por favor login com sua nova senha.",
@@ -62,7 +61,6 @@ const ResetPassword = () => {
                   isClosable: true,
                   position: "top"
                 })          
-              )
             })
             .catch(error => {
               console.log('An error occurred:', error.response);

@@ -1,4 +1,4 @@
-import { Flex, Center, Link, Box } from "@chakra-ui/react"
+import { Flex, Center, Link, Box, createStandaloneToast } from "@chakra-ui/react"
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import axios from "axios"
@@ -9,6 +9,8 @@ import NextLink from 'next/link'
 
 const Register = () => {
   const [events, setEvents] = useState([]);
+
+  const toast = createStandaloneToast()
 
   useEffect(() => {
     const fetchPost = async () => {

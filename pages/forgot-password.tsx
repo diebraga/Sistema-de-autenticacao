@@ -66,7 +66,6 @@ const ForgotPassword = () => {
             } else {
             
               Router.push('/login')
-              .then(
                 toast({
                   title: "Verifique em seu email.",
                   description: "Por favor verifique em seu email.",
@@ -75,7 +74,6 @@ const ForgotPassword = () => {
                   isClosable: true,
                   position: "top"
                 })          
-              )
             }
             
             setSubmitting(false)
