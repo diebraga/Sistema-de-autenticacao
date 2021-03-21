@@ -1,3 +1,4 @@
+import "../styles/global.css"
 import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react'
 import Router from 'next/router'
 import { parseCookies } from 'nookies'
