@@ -1063,6 +1063,11 @@ babylonjs-gltf2interface@4.2.0:
   resolved "https://registry.yarnpkg.com/babylonjs-gltf2interface/-/babylonjs-gltf2interface-4.2.0.tgz#b0ef1e11e3574cf2c6f573d0c5c34857a2a7b322"
   integrity sha512-Fn/ThxwZWP9kEAqk+9FX9CAeF4ah/I0/8wzAZR8MQuYqlYpEfM+E/IztJ+4LoOOxQYMWNs5lgj8OXSkX0tqc4g==
 
+babylonjs-hook@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/babylonjs-hook/-/babylonjs-hook-0.0.1.tgz#a5a07bf927db0d7661795fef995e464975904a3b"
+  integrity sha512-mtfMyq1NMFvDHUODFSph0pVYzwbTLl2+85g5yW9hIDAWYndD00+6JxfrmgJ3tCQmkrcmqhMW/shlgRvv2aLIHA==
+
 base64-js@^1.0.2, base64-js@^1.3.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.5.1.tgz#1b1b440160a5bf7ad40b650f095963481903930a"
