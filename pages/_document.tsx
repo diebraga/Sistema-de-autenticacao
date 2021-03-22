@@ -7,6 +7,7 @@ export default class Document extends NextDocument {
       <Html>
         <Head />
         <body>
+        <script src="https://cdn.babylonjs.com/cannon.js"></script>
           {/* Make Color mode to persists when you refresh the page. */}
           <ColorModeScript />
           <Main />

@@ -1,0 +1,1032 @@
+Exporter version: 6.4.4, Blender version: 2.83.0
+========= Conversion from Blender to Babylon.js =========
+	Scene settings used :
+		Inline textures     :  false
+		Material Type       :  PBR
+		Positions Precision :  4
+		Normals Precision   :  3
+		UVs Precision       :  3
+		Vert Color Precision:  3
+		Mat Weight Precision:  2
+		Keep Z-up r-handed  :  no
+		Texture directory   :  C:\Users\Carol\Documents\CENA.FTE\cena_lounge\to_babylon\
+	Python World class constructor completed
+	WARNING: No active camera has been assigned, or is not in a currently selected Blender layer
+	processing begun of mesh:  zobj_pisolounge
+		processing begun of material:  zm_pisolounge
+		processing begun of material:  zm_verdeclaro
+		processing begun of material:  zm_azulescuro
+		processing begun of material:  zm_roxo
+		processing begun of material:  zm_red
+		processing begun of material:  zm_amarelo
+		processing begun of material:  zm_verdescuro
+		processing begun of material:  zm_vermelho
+		processing begun of material:  zm_yellow
+		processing begun of material:  zm_vinho
+		processing begun of material:  zm_laranja
+		processing begun of material:  zm_rosa
+		processing begun of material:  zm_orange
+		processing begun of material:  zm_musgo
+		processing begun of material:  m_sessao_001
+		processing begun of material:  m_sessao_004
+		processing begun of material:  m_sessao_002
+		processing begun of material:  m_sessao_003
+		processing begun of multimaterial:  cena_lounge.Multimaterial#0
+		num positions      :  255
+		num normals        :  255
+		num tangents       :  0
+		num uvs            :  510
+		num uvs2           :  0
+		num colors         :  1020
+		num triangles      :  152
+	processing begun of mesh:  obj_sessao_02
+		processing begun of material:  m_sessao_02.001
+			processing texture t_sessao_02
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		num positions      :  4
+		num normals        :  4
+		num tangents       :  0
+		num uvs            :  8
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  2
+	processing begun of mesh:  zobj_banner
+		processing begun of material:  zm_parede
+		num positions      :  358
+		num normals        :  358
+		num tangents       :  0
+		num uvs            :  716
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  148
+	processing begun of mesh:  obj_sessao_01
+		processing begun of material:  m_sessao_01
+			processing texture t_sessao_01
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		num positions      :  4
+		num normals        :  4
+		num tangents       :  0
+		num uvs            :  8
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  2
+	processing begun of mesh:  zobj_portasecao04
+		processing begun of material:  zm_portasecaoimg04
+		num positions      :  8
+		num normals        :  8
+		num tangents       :  0
+		num uvs            :  16
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  4
+	processing begun of mesh:  zobj_portasecao01
+		processing begun of material:  zm_portasecaoimg01
+		num positions      :  8
+		num normals        :  8
+		num tangents       :  0
+		num uvs            :  16
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  4
+	processing begun of mesh:  zobj_portasecao02
+		processing begun of material:  zm_portasecaoimg02
+		num positions      :  8
+		num normals        :  8
+		num tangents       :  0
+		num uvs            :  16
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  4
+	processing begun of mesh:  zobj_portasecao03
+		processing begun of material:  zm_portasecaoimg03
+		num positions      :  8
+		num normals        :  8
+		num tangents       :  0
+		num uvs            :  16
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  4
+	processing begun of mesh:  zobj_parede
+		processing begun of material:  zm_branco
+		processing begun of material:  zm_pilar
+		processing begun of material:  zm_janela
+		processing begun of material:  zm_metal
+		processing begun of material:  m_sessao_001
+		processing begun of material:  m_sessao_004
+		processing begun of material:  m_sessao_002
+		processing begun of material:  m_sessao_003
+			processing texture t_ceu
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		registered as also a user of material:  m_sessao_001
+		registered as also a user of material:  m_sessao_004
+		registered as also a user of material:  m_sessao_002
+		registered as also a user of material:  m_sessao_003
+		processing begun of multimaterial:  cena_lounge.Multimaterial#1
+		num positions      :  1335
+		num normals        :  1335
+		num tangents       :  0
+		num uvs            :  2670
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  536
+	processing begun of mesh:  zobj_forro
+		processing begun of material:  zm_parede
+		processing begun of material:  zm_luzled
+		registered as also a user of material:  zm_parede
+		processing begun of multimaterial:  cena_lounge.Multimaterial#2
+		num positions      :  185
+		num normals        :  185
+		num tangents       :  0
+		num uvs            :  370
+		num uvs2           :  0
+		num colors         :  740
+		num triangles      :  72
+	processing begun of mesh:  obj_totemdir_002
+		processing begun of material:  m_totemdir_002
+			processing texture t_totemesqdir
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		num positions      :  8
+		num normals        :  8
+		num tangents       :  0
+		num uvs            :  16
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  6
+	processing begun of mesh:  obj_totemesq_002
+		processing begun of material:  m_totemesq_002
+			processing texture t_totemesqdir
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		num positions      :  8
+		num normals        :  8
+		num tangents       :  0
+		num uvs            :  16
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  6
+	processing begun of mesh:  obj_totemsup_002
+		processing begun of material:  m_totemsup_002
+			processing texture t_videostand
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		num positions      :  14
+		num normals        :  14
+		num tangents       :  0
+		num uvs            :  28
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  zobj_totem
+		processing begun of material:  zm_metal
+		registered as also a user of material:  zm_metal
+		num positions      :  185
+		num normals        :  185
+		num tangents       :  0
+		num uvs            :  370
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  178
+	processing begun of mesh:  zobj_esquadria_003
+		processing begun of material:  zm_metal
+		registered as also a user of material:  zm_metal
+		num positions      :  119
+		num normals        :  119
+		num tangents       :  0
+		num uvs            :  238
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  52
+	processing begun of mesh:  obj_sessao_03
+		processing begun of material:  m_sessao_04
+			processing texture t_sessao_03
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		num positions      :  4
+		num normals        :  4
+		num tangents       :  0
+		num uvs            :  8
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  2
+	processing begun of mesh:  obj_sessao_04
+		processing begun of material:  m_sessao_02
+			processing texture t_sessao_04
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		num positions      :  4
+		num normals        :  4
+		num tangents       :  0
+		num uvs            :  8
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  2
+	processing begun of mesh:  obj_pisocorsessao_001
+		processing begun of material:  m_sessao_001
+		registered as also a user of material:  m_sessao_001
+		num positions      :  6
+		num normals        :  6
+		num tangents       :  0
+		num uvs            :  12
+		num uvs2           :  0
+		num colors         :  24
+		num triangles      :  4
+	processing begun of mesh:  obj_pisocorsessao_002
+		processing begun of material:  m_sessao_002
+		registered as also a user of material:  m_sessao_002
+		num positions      :  6
+		num normals        :  6
+		num tangents       :  0
+		num uvs            :  12
+		num uvs2           :  0
+		num colors         :  24
+		num triangles      :  4
+	processing begun of mesh:  obj_pisocorsessao_003
+		processing begun of material:  m_sessao_001
+		processing begun of material:  zm_verdeclaro
+		processing begun of material:  zm_azulescuro
+		processing begun of material:  zm_roxo
+		processing begun of material:  zm_red
+		processing begun of material:  zm_amarelo
+		processing begun of material:  zm_verdescuro
+		processing begun of material:  m_sessao_002
+		processing begun of material:  zm_vermelho
+		processing begun of material:  m_sessao_003
+		processing begun of material:  zm_yellow
+		processing begun of material:  zm_vinho
+		processing begun of material:  zm_laranja
+		processing begun of material:  zm_rosa
+		processing begun of material:  zm_orange
+		processing begun of material:  zm_musgo
+		processing begun of material:  m_sessao_004
+		registered as also a user of material:  m_sessao_001
+		registered as also a user of material:  zm_verdeclaro
+		registered as also a user of material:  zm_azulescuro
+		registered as also a user of material:  zm_roxo
+		registered as also a user of material:  zm_red
+		registered as also a user of material:  zm_amarelo
+		registered as also a user of material:  zm_verdescuro
+		registered as also a user of material:  m_sessao_002
+		registered as also a user of material:  zm_vermelho
+		registered as also a user of material:  m_sessao_003
+		registered as also a user of material:  zm_yellow
+		registered as also a user of material:  zm_vinho
+		registered as also a user of material:  zm_laranja
+		registered as also a user of material:  zm_rosa
+		registered as also a user of material:  zm_orange
+		registered as also a user of material:  zm_musgo
+		registered as also a user of material:  m_sessao_004
+		processing begun of multimaterial:  cena_lounge.Multimaterial#3
+		num positions      :  4
+		num normals        :  4
+		num tangents       :  0
+		num uvs            :  8
+		num uvs2           :  0
+		num colors         :  16
+		num triangles      :  2
+	processing begun of mesh:  obj_pisocorsessao_004
+		processing begun of material:  m_sessao_001
+		processing begun of material:  zm_verdeclaro
+		processing begun of material:  zm_azulescuro
+		processing begun of material:  zm_roxo
+		processing begun of material:  zm_red
+		processing begun of material:  zm_amarelo
+		processing begun of material:  zm_verdescuro
+		processing begun of material:  m_sessao_002
+		processing begun of material:  zm_vermelho
+		processing begun of material:  m_sessao_003
+		processing begun of material:  zm_yellow
+		processing begun of material:  zm_vinho
+		processing begun of material:  zm_laranja
+		processing begun of material:  zm_rosa
+		processing begun of material:  zm_orange
+		processing begun of material:  zm_musgo
+		processing begun of material:  m_sessao_004
+		registered as also a user of material:  m_sessao_001
+		registered as also a user of material:  zm_verdeclaro
+		registered as also a user of material:  zm_azulescuro
+		registered as also a user of material:  zm_roxo
+		registered as also a user of material:  zm_red
+		registered as also a user of material:  zm_amarelo
+		registered as also a user of material:  zm_verdescuro
+		registered as also a user of material:  m_sessao_002
+		registered as also a user of material:  zm_vermelho
+		registered as also a user of material:  m_sessao_003
+		registered as also a user of material:  zm_yellow
+		registered as also a user of material:  zm_vinho
+		registered as also a user of material:  zm_laranja
+		registered as also a user of material:  zm_rosa
+		registered as also a user of material:  zm_orange
+		registered as also a user of material:  zm_musgo
+		registered as also a user of material:  m_sessao_004
+		processing begun of multimaterial:  cena_lounge.Multimaterial#4
+		num positions      :  4
+		num normals        :  4
+		num tangents       :  0
+		num uvs            :  8
+		num uvs2           :  0
+		num colors         :  16
+		num triangles      :  2
+	processing begun of mesh:  obj_botaoclicar
+		processing begun of material:  m_botaoclicar
+			processing texture t_clickhere
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture t_clickhere
+				texture type:  emissiveTexture, mapped using: "UVMap"
+		num positions      :  4
+		num normals        :  4
+		num tangents       :  0
+		num uvs            :  8
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  2
+	processing begun of mesh:  obj_botaosessao_001
+		processing begun of material:  m_botaosessao_001
+			processing texture t_botao
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture t_botao
+				texture type:  emissiveTexture, mapped using: "UVMap"
+		num positions      :  4
+		num normals        :  4
+		num tangents       :  0
+		num uvs            :  8
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  2
+	processing begun of mesh:  obj_botaosessao_003
+		processing begun of material:  m_botaosessao_003
+			processing texture t_botao
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture t_botao
+				texture type:  emissiveTexture, mapped using: "UVMap"
+		num positions      :  4
+		num normals        :  4
+		num tangents       :  0
+		num uvs            :  8
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  2
+	processing begun of mesh:  obj_botaosessao_004
+		processing begun of material:  m_botaosessao_004
+			processing texture t_botao
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture t_botao
+				texture type:  emissiveTexture, mapped using: "UVMap"
+		num positions      :  4
+		num normals        :  4
+		num tangents       :  0
+		num uvs            :  8
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  2
+	processing begun of mesh:  obj_botaosessao_002
+		processing begun of material:  m_botaosessao_002
+			processing texture t_botao
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture t_botao
+				texture type:  emissiveTexture, mapped using: "UVMap"
+		num positions      :  4
+		num normals        :  4
+		num tangents       :  0
+		num uvs            :  8
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  2
+	processing begun of mesh:  obj_botaoclicar_001
+		mesh is an instance of :  obj_botaoclicar.  Processing halted.
+	processing begun of mesh:  obj_botaoclicar_002
+		mesh is an instance of :  obj_botaoclicar.  Processing halted.
+	processing begun of mesh:  obj_botaoclicar_003
+		mesh is an instance of :  obj_botaoclicar.  Processing halted.
+	processing begun of mesh:  zobj_esquadria_001
+		mesh is an instance of :  zobj_esquadria_003.  Processing halted.
+	processing begun of mesh:  zobj_esquadria_002
+		mesh is an instance of :  zobj_esquadria_003.  Processing halted.
+	processing begun of mesh:  zobj_esquadria_004
+		mesh is an instance of :  zobj_esquadria_003.  Processing halted.
+	processing begun of mesh:  obj_colisaolounge
+		processing begun of material:  m_colisaolounge
+		num positions      :  294
+		num normals        :  294
+		num tangents       :  0
+		num uvs            :  588
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  107
+	processing begun of mesh:  obj_videopalco
+		processing begun of material:  m_videopalco
+			processing texture t_video_palco
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		num positions      :  18
+		num normals        :  18
+		num tangents       :  0
+		num uvs            :  36
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  16
+	processing begun of mesh:  obj_videolatesq
+		processing begun of material:  m_videolatesq
+			processing texture t_artepalco_esq
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		num positions      :  8
+		num normals        :  8
+		num tangents       :  0
+		num uvs            :  16
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  6
+	processing begun of mesh:  obj_videolatdir
+		processing begun of material:  m_videolatdir
+			processing texture t_artepalco_dir
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		num positions      :  8
+		num normals        :  8
+		num tangents       :  0
+		num uvs            :  16
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  6
+	processing begun of mesh:  zobj_fundo
+		processing begun of material:  zm_metal
+		registered as also a user of material:  zm_metal
+		num positions      :  37
+		num normals        :  37
+		num tangents       :  0
+		num uvs            :  74
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  28
+	processing begun of mesh:  zobj_estruturapalco
+		processing begun of material:  zm_metal
+		registered as also a user of material:  zm_metal
+		num positions      :  533
+		num normals        :  533
+		num tangents       :  0
+		num uvs            :  1066
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  264
+	processing begun of mesh:  obj_patrocinador_palco
+		processing begun of material:  m_patrocinador_palco
+			processing texture t_patrocinador_palco
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		num positions      :  4
+		num normals        :  4
+		num tangents       :  0
+		num uvs            :  8
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  2
+	processing begun of mesh:  zobj_palco
+		processing begun of material:  zm_madeira
+		num positions      :  635
+		num normals        :  635
+		num tangents       :  0
+		num uvs            :  1270
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  263
+	processing begun of mesh:  zobj_luz
+		processing begun of material:  m_plastico
+		num positions      :  670
+		num normals        :  670
+		num tangents       :  0
+		num uvs            :  1340
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  446
+	processing begun of mesh:  zobj_luz01
+		mesh is an instance of :  zobj_luz.  Processing halted.
+	processing begun of mesh:  zobj_luz02
+		mesh is an instance of :  zobj_luz.  Processing halted.
+	processing begun of mesh:  zobj_luz03
+		mesh is an instance of :  zobj_luz.  Processing halted.
+	processing begun of mesh:  zobj_som
+		processing begun of material:  m_plastico
+		registered as also a user of material:  m_plastico
+		num positions      :  66
+		num normals        :  66
+		num tangents       :  0
+		num uvs            :  132
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  28
+	processing begun of mesh:  zobj_som01
+		mesh is an instance of :  zobj_som.  Processing halted.
+	processing begun of mesh:  zobj_som02
+		mesh is an instance of :  zobj_som.  Processing halted.
+	processing begun of mesh:  zobj_som03
+		mesh is an instance of :  zobj_som.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01
+		processing begun of material:  zm_madeira
+		processing begun of material:  zm_metal
+		registered as also a user of material:  zm_madeira
+		registered as also a user of material:  zm_metal
+		processing begun of multimaterial:  cena_lounge.Multimaterial#5
+		num positions      :  249
+		num normals        :  249
+		num tangents       :  0
+		num uvs            :  498
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  116
+	processing begun of mesh:  zobj_cadeira01.300
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.002
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.003
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.004
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.005
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.006
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.007
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.008
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.009
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.010
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.011
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.012
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.013
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.014
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.015
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.016
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.017
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.018
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.019
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.020
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.021
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.022
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.023
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.024
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.025
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.026
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.027
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.028
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.029
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.030
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.031
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.032
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.033
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.034
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.035
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.036
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.037
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.038
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.039
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.040
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.041
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.042
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.043
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.044
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.045
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.046
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.047
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.048
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.049
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.050
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.051
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.052
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.053
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.054
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.055
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.056
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.057
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.058
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.059
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.060
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.061
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.062
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.063
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.064
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.065
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.066
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.067
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.068
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.069
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.070
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.071
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.072
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.073
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.074
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.075
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.076
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.077
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.078
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.079
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.080
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.081
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.082
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.083
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.084
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.085
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.086
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.087
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.088
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.089
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.090
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.091
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.092
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.093
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.094
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.095
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.096
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.097
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.098
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.099
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.100
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.101
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.102
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.103
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.104
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.105
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.106
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.107
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.108
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.109
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.110
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.111
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.112
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.113
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.114
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.115
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.116
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.117
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.118
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.119
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.120
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.121
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.122
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.123
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.124
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.125
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.126
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.127
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.128
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.129
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.130
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.131
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.132
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.133
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.134
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.135
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.136
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.137
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.138
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.139
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.140
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.141
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.142
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.143
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.144
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.145
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.146
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.147
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.148
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.149
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.150
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.151
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.152
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.153
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.154
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.155
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.156
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.157
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.158
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.159
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.160
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.161
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.162
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.163
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.164
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.165
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.166
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.167
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.168
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.169
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.170
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.171
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.172
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.173
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.174
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.175
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.176
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.177
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.178
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.179
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.180
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.181
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.182
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.183
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.184
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.185
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.186
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.187
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.188
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.189
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.190
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.191
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.192
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.193
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.194
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.195
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.196
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.197
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.198
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.199
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.200
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.201
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.202
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.203
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.204
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.205
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.206
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.207
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.208
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.209
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.210
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.211
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.212
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.213
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.214
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.215
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.216
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.217
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.218
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_cadeira01.219
+		mesh is an instance of :  zobj_cadeira01.  Processing halted.
+	processing begun of mesh:  zobj_banco
+		processing begun of material:  zm_luzled_02
+		num positions      :  202
+		num normals        :  202
+		num tangents       :  0
+		num uvs            :  404
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  100
+	processing begun of mesh:  zobj_banco_001
+		mesh is an instance of :  zobj_banco.  Processing halted.
+	processing begun of mesh:  zobj_banco_002
+		mesh is an instance of :  zobj_banco.  Processing halted.
+	processing begun of mesh:  zobj_banco_003
+		mesh is an instance of :  zobj_banco.  Processing halted.
+	processing begun of mesh:  zobj_banco_004
+		mesh is an instance of :  zobj_banco.  Processing halted.
+	processing begun of mesh:  zobj_banco_005
+		mesh is an instance of :  zobj_banco.  Processing halted.
+	processing begun of mesh:  zobj_banco_006
+		mesh is an instance of :  zobj_banco.  Processing halted.
+	processing begun of mesh:  zobj_banco_007
+		mesh is an instance of :  zobj_banco.  Processing halted.
+	processing begun of mesh:  zobj_banco_008
+		mesh is an instance of :  zobj_banco.  Processing halted.
+========= Writing of JSON file started =========
+	writing mesh:  zobj_pisolounge
+	writing mesh:  obj_sessao_02
+	writing mesh:  zobj_banner
+	writing mesh:  obj_sessao_01
+	writing mesh:  zobj_portasecao04
+	writing mesh:  zobj_portasecao01
+	writing mesh:  zobj_portasecao02
+	writing mesh:  zobj_portasecao03
+	writing mesh:  zobj_parede
+	writing mesh:  zobj_forro
+	writing mesh:  obj_totemdir_002
+	writing mesh:  obj_totemesq_002
+	writing mesh:  obj_totemsup_002
+	writing mesh:  zobj_totem
+	writing mesh:  zobj_esquadria_003
+	writing mesh:  obj_sessao_03
+	writing mesh:  obj_sessao_04
+	writing mesh:  obj_pisocorsessao_001
+	writing mesh:  obj_pisocorsessao_002
+	writing mesh:  obj_pisocorsessao_003
+	writing mesh:  obj_pisocorsessao_004
+	writing mesh:  obj_botaoclicar
+	writing mesh:  obj_botaosessao_001
+	writing mesh:  obj_botaosessao_003
+	writing mesh:  obj_botaosessao_004
+	writing mesh:  obj_botaosessao_002
+	writing mesh:  obj_colisaolounge
+	writing mesh:  obj_videopalco
+	writing mesh:  obj_videolatesq
+	writing mesh:  obj_videolatdir
+	writing mesh:  zobj_fundo
+	writing mesh:  zobj_estruturapalco
+	writing mesh:  obj_patrocinador_palco
+	writing mesh:  zobj_palco
+	writing mesh:  zobj_luz
+	writing mesh:  zobj_som
+	writing mesh:  zobj_cadeira01
+	writing mesh:  zobj_banco
+========= Writing of JSON file completed =========
+========= end of processing =========
+elapsed time:  0 min, 0.6087 secs
