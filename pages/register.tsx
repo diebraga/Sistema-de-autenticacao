@@ -5,6 +5,9 @@ import axios from "axios"
 import { RegisterForm } from "../components/RegisterForm"
 import Head from "next/head"
 import NextLink from 'next/link'
+import { Elements } from '@stripe/react-stripe-js'
+import getStripe from '../utils/get-stripe'
+import ElementsForm from '../components/ElementsForm'
 
 
 const Register = () => {
@@ -46,6 +49,11 @@ const Register = () => {
           <NextLink href="/login">
             <Link color="blue.300">Ja tenho uma conta. ➔</Link>
           </NextLink>
+          <br />
+          
+          <Elements stripe={getStripe()}>
+            <ElementsForm />
+          </Elements>
         </Box>
       </Flex>
     </>
