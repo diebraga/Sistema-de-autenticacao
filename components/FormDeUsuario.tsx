@@ -28,6 +28,10 @@ export const FormDeUsuario = (props) => {
   const [submitting, setSubmitting] = useState(false)
   const [formStep, setFormStep] = useState(0)
 
+  const completarPassoForm = () => {
+    setFormStep(cur => cur + 1)
+  }
+
   const toast = createStandaloneToast()
 
   return (
@@ -135,6 +139,9 @@ export const FormDeUsuario = (props) => {
           </Select>        
           {errors.eventos &&(<small style={{ color: "red" }}> <WarningIcon /> {errors.eventos.message}.</small>)}    
         </InputGroup>
+        <Button type='button' mt={3} mb={3} colorScheme='teal' onClick={completarPassoForm}>
+          Prossimo passo
+        </Button>
           <br/>
           <NextLink href="/login">
             <Link color="blue.300">Ja tenho uma conta. ➔</Link>
@@ -153,13 +160,11 @@ export const FormDeUsuario = (props) => {
     </FormControl>
 
     {formStep === 1 && (
-      <div className="container">
-        <div className="page-container">
-          <h1>Pagamento ingresso na plataforma</h1>
-          <Elements stripe={getStripe()}>
-            <FormDePagamento />
-          </Elements>
-        </div>
+      <div>
+        <Heading as='h1'>Pagamento ingresso na plataforma</Heading>
+        <Elements stripe={getStripe()}>
+          <FormDePagamento />
+        </Elements>
       </div>
     )}
   </>

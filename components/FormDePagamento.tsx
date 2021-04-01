@@ -1,6 +1,18 @@
 import { useState } from 'react'
 import PrintObject from '../components/PrintObject'
-
+import { 
+  FormControl,
+  Input,
+  Text,
+  Button,
+  Spinner,
+  Heading,
+  Select,
+  InputGroup, 
+  InputLeftElement,
+  createStandaloneToast,
+  Link
+} from "@chakra-ui/react"
 import { fetchPostJSON } from '../utils/api-helpers'
 import { formatAmountForDisplay } from '../utils/stripe-helpers'
 import * as config from '../config'
@@ -15,7 +27,7 @@ const CARD_OPTIONS = {
       color: '#6772e5',
       fontWeight: '500',
       fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
-      fontSize: '16px',
+      fontSize: '19px',
       fontSmoothing: 'antialiased',
       ':-webkit-autofill': {
         color: '#fce883',
@@ -59,7 +71,7 @@ const FormDePagamento = () => {
         return (
           <>
             <h2>Erro ao fazer pagamento 😭</h2>
-            <p className="error-message">{errorMessage}</p>
+            <small style={{ color: "red" }}>{errorMessage}</small>
           </>
         )
 
@@ -110,8 +122,7 @@ const FormDePagamento = () => {
 
     if (error) {
       setPayment({ status: 'error' })
-      setErrorMessage('Porfaor tente novamente')
-      console.log(error)
+      setErrorMessage('Porfavor tente novamente.')
     } else if (paymentIntent) {
       setPayment(paymentIntent)
     }
@@ -132,14 +143,14 @@ const FormDePagamento = () => {
 
     if (error?.code === "incomplete_expiry") {
       setPayment({ status: 'error' })
-      setErrorMessage("Seu codigo de expiração esta incompleto")
+      setErrorMessage("Seu codigo de expiração esta incompleto.")
     } else if (paymentIntent) {
       setPayment(paymentIntent)
     }
 
     if (error?.code === "invalid_number") {
       setPayment({ status: 'error' })
-      setErrorMessage("Numero de cartao invalido")
+      setErrorMessage("Numero de cartao invalido.")
     } else if (paymentIntent) {
       setPayment(paymentIntent)
     }
@@ -148,18 +159,19 @@ const FormDePagamento = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <fieldset className="elements-style">
-          <legend>Detalhes de pagamento:</legend>
+        <fieldset>
+          <Text as='legend' fontSize={20} mb={3} mt={3}>Detalhes de pagamento:</Text>
           <h1>Valor ingresso 90 RS</h1>
-          <input
+          <Input
+            mb={4}
+            mt={3}
             placeholder="Nome no cartao"
-            className="elements-style"
             type="Text"
             name="cardholderName"
             onChange={handleInputChange}
             required
           />
-          <div className="FormRow elements-style">
+          <div>
             <CardElement
               options={CARD_OPTIONS}
               onChange={(e) => {
@@ -170,8 +182,10 @@ const FormDePagamento = () => {
             />
           </div>
         </fieldset>
-        <button
-          className="elements-style-background"
+        <Button
+          mt={4}
+          mb={3}
+          colorScheme='teal'
           type="submit"
           disabled={
             !['initial', 'succeeded', 'error'].includes(payment.status) ||
@@ -179,7 +193,7 @@ const FormDePagamento = () => {
           }
         >
           Pague {formatAmountForDisplay(input.valorDoIngresso, config.CURRENCY)}
-        </button>
+        </Button>
       </form>
       <PaymentStatus status={payment.status} />
       <PrintObject content={payment} />
