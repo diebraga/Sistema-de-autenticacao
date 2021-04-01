@@ -16,7 +16,7 @@ import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 
 
-export const RegisterForm = (props) => {
+export const FormDeUsuario = (props) => {
   const { register, errors, handleSubmit, watch, reset } = useForm({
     mode: "all"
   })  

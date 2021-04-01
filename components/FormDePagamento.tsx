@@ -1,7 +1,4 @@
-import React, { useState } from 'react'
-
-import CustomDonationInput from '../components/CustomDonationInput'
-import StripeTestCards from '../components/StripeTestCards'
+import { useState } from 'react'
 import PrintObject from '../components/PrintObject'
 
 import { fetchPostJSON } from '../utils/api-helpers'
@@ -34,11 +31,12 @@ const CARD_OPTIONS = {
   },
 }
 
-const ElementsForm = () => {
+const FormDePagamento = () => {
   const [input, setInput] = useState({
-    customDonation: Math.round(config.MAX_AMOUNT / config.AMOUNT_STEP),
+    valorDoIngresso: 90,
     cardholderName: '',
   })
+
   const [payment, setPayment] = useState({ status: 'initial' })
   const [errorMessage, setErrorMessage] = useState('')
   const stripe = useStripe()
@@ -49,18 +47,18 @@ const ElementsForm = () => {
       case 'processing':
       case 'requires_payment_method':
       case 'requires_confirmation':
-        return <h2>Processing...</h2>
+        return <h2>Processando pagamento...</h2>
 
       case 'requires_action':
-        return <h2>Authenticating...</h2>
+        return <h2>Autenticando...</h2>
 
       case 'succeeded':
-        return <h2>Payment Succeeded 🥳</h2>
+        return <h2>Pagamento efetuado com sucesso! 🥳</h2>
 
       case 'error':
         return (
           <>
-            <h2>Error 😭</h2>
+            <h2>Erro ao fazer pagamento 😭</h2>
             <p className="error-message">{errorMessage}</p>
           </>
         )
@@ -84,7 +82,7 @@ const ElementsForm = () => {
 
     // Create a PaymentIntent with the specified amount.
     const response = await fetchPostJSON('/api/payment_intents', {
-      amount: input.customDonation,
+      amount: input.valorDoIngresso,
     })
     setPayment(response)
 
@@ -112,7 +110,36 @@ const ElementsForm = () => {
 
     if (error) {
       setPayment({ status: 'error' })
-      setErrorMessage(error.message ?? 'An unknown error occured')
+      setErrorMessage('Porfaor tente novamente')
+      console.log(error)
+    } else if (paymentIntent) {
+      setPayment(paymentIntent)
+    }
+
+    if (error?.code === "incomplete_zip") {
+      setPayment({ status: 'error' })
+      setErrorMessage("Seu codigo postal esta incompleto.")
+    } else if (paymentIntent) {
+      setPayment(paymentIntent)
+    }
+
+    if (error?.code === "incomplete_cvc") {
+      setPayment({ status: 'error' })
+      setErrorMessage("Seu codigo de seguranca esta incompleto.")
+    } else if (paymentIntent) {
+      setPayment(paymentIntent)
+    }
+
+    if (error?.code === "incomplete_expiry") {
+      setPayment({ status: 'error' })
+      setErrorMessage("Seu codigo de expiração esta incompleto")
+    } else if (paymentIntent) {
+      setPayment(paymentIntent)
+    }
+
+    if (error?.code === "invalid_number") {
+      setPayment({ status: 'error' })
+      setErrorMessage("Numero de cartao invalido")
     } else if (paymentIntent) {
       setPayment(paymentIntent)
     }
@@ -121,21 +148,11 @@ const ElementsForm = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <CustomDonationInput
-          className="elements-style"
-          name="customDonation"
-          value={input.customDonation}
-          min={config.MIN_AMOUNT}
-          max={config.MAX_AMOUNT}
-          step={config.AMOUNT_STEP}
-          currency={config.CURRENCY}
-          onChange={handleInputChange}
-        />
-        <StripeTestCards />
         <fieldset className="elements-style">
-          <legend>Your payment details:</legend>
+          <legend>Detalhes de pagamento:</legend>
+          <h1>Valor ingresso 90 RS</h1>
           <input
-            placeholder="Cardholder name"
+            placeholder="Nome no cartao"
             className="elements-style"
             type="Text"
             name="cardholderName"
@@ -148,7 +165,6 @@ const ElementsForm = () => {
               onChange={(e) => {
                 if (e.error) {
                   setPayment({ status: 'error' })
-                  setErrorMessage(e.error.message ?? 'An unknown error occured')
                 }
               }}
             />
@@ -162,7 +178,7 @@ const ElementsForm = () => {
             !stripe
           }
         >
-          Donate {formatAmountForDisplay(input.customDonation, config.CURRENCY)}
+          Pague {formatAmountForDisplay(input.valorDoIngresso, config.CURRENCY)}
         </button>
       </form>
       <PaymentStatus status={payment.status} />
@@ -171,4 +187,4 @@ const ElementsForm = () => {
   )
 }
 
-export default ElementsForm
+export default FormDePagamento
