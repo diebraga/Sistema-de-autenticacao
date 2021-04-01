@@ -150,9 +150,11 @@ export const FormDeUsuario = (props) => {
         </>
         )}
 
-        {formStep === 3 && (
+        {formStep === 2 && (
         <InputGroup>
-          {submitting ? <Spinner color="blue.500" size="lg" mt={3} /> : <Button colorScheme='teal' mt={3} type="submit">Enviar</Button>}
+          {submitting ? <Spinner color="blue.500" size="lg" mt={3} /> : <Button colorScheme='teal' mt={3} type="submit">
+            Finalizar cadastro.
+          </Button>}
         </InputGroup>
         )}
       </>
@@ -163,7 +165,11 @@ export const FormDeUsuario = (props) => {
       <div>
         <Heading as='h1'>Pagamento ingresso na plataforma</Heading>
         <Elements stripe={getStripe()}>
-          <FormDePagamento />
+          <FormDePagamento prossimoPassoButton={(
+            <Button type='button' mt={3} mb={3} colorScheme='teal' onClick={completarPassoForm}>
+              Prossimo passo
+            </Button>
+          )}/>
         </Elements>
       </div>
     )}

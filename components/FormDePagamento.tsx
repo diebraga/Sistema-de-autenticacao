@@ -1,21 +1,18 @@
-import { useState } from 'react'
+import { useState, ReactNode } from 'react'
 import PrintObject from '../components/PrintObject'
 import { 
-  FormControl,
   Input,
   Text,
   Button,
   Spinner,
-  Heading,
-  Select,
-  InputGroup, 
-  InputLeftElement,
-  createStandaloneToast,
-  Link
 } from "@chakra-ui/react"
 import { fetchPostJSON } from '../utils/api-helpers'
 import { formatAmountForDisplay } from '../utils/stripe-helpers'
 import * as config from '../config'
+
+interface FormDePagamentoProps {
+    prossimoPassoButton: ReactNode
+}
 
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 
@@ -43,7 +40,7 @@ const CARD_OPTIONS = {
   },
 }
 
-const FormDePagamento = () => {
+const FormDePagamento = ({ prossimoPassoButton }: FormDePagamentoProps) => {
   const [input, setInput] = useState({
     valorDoIngresso: 90,
     cardholderName: '',
@@ -59,13 +56,20 @@ const FormDePagamento = () => {
       case 'processing':
       case 'requires_payment_method':
       case 'requires_confirmation':
-        return <h2>Processando pagamento...</h2>
+        return <h2>Processando pagamento... <Spinner /></h2>
 
       case 'requires_action':
-        return <h2>Autenticando...</h2>
+        return <h2>Autenticando... <Spinner /></h2>
 
       case 'succeeded':
-        return <h2>Pagamento efetuado com sucesso! 🥳</h2>
+    return (
+      <>
+      <h2>Pagamento efetuado com sucesso! 🥳</h2>
+      <div>
+        {prossimoPassoButton}
+      </div>
+      </>
+    )
 
       case 'error':
         return (
@@ -196,7 +200,6 @@ const FormDePagamento = () => {
         </Button>
       </form>
       <PaymentStatus status={payment.status} />
-      <PrintObject content={payment} />
     </>
   )
 }
