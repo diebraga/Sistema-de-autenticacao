@@ -8,13 +8,17 @@ import {
   Select,
   InputGroup, 
   InputLeftElement,
-  createStandaloneToast
+  createStandaloneToast,
+  Link
 } from "@chakra-ui/react"
 import { WarningIcon, EmailIcon, CalendarIcon, LockIcon, UnlockIcon } from '@chakra-ui/icons'
 import { FaUser } from 'react-icons/fa'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
-
+import { Elements } from '@stripe/react-stripe-js'
+import getStripe from '../utils/get-stripe'
+import FormDePagamento from '../components/FormDePagamento'
+import NextLink from 'next/link'
 
 export const FormDeUsuario = (props) => {
   const { register, errors, handleSubmit, watch, reset } = useForm({
@@ -22,10 +26,12 @@ export const FormDeUsuario = (props) => {
   })  
 
   const [submitting, setSubmitting] = useState(false)
+  const [formStep, setFormStep] = useState(0)
 
   const toast = createStandaloneToast()
 
   return (
+    <>
     <FormControl w={[300, 400, 500]}>
     <form onSubmit={handleSubmit(async(formData) => {
       setSubmitting(true)
@@ -70,6 +76,8 @@ export const FormDeUsuario = (props) => {
       setSubmitting(false)
       reset()
     })}>
+      <>
+        {formStep === 0 && (
         <>
         <Heading as="h1">Faça seu cadastro 🚀</Heading>
         <FormLabel mt={3} htmlFor="username">Nome</FormLabel>
@@ -127,11 +135,33 @@ export const FormDeUsuario = (props) => {
           </Select>        
           {errors.eventos &&(<small style={{ color: "red" }}> <WarningIcon /> {errors.eventos.message}.</small>)}    
         </InputGroup>
+          <br/>
+          <NextLink href="/login">
+            <Link color="blue.300">Ja tenho uma conta. ➔</Link>
+          </NextLink>
+          <br />
+        </>
+        )}
+
+        {formStep === 3 && (
         <InputGroup>
-        {submitting ? <Spinner color="blue.500" size="lg" mt={3} /> : <Button mt={3} type="submit">Enviar</Button>}
+          {submitting ? <Spinner color="blue.500" size="lg" mt={3} /> : <Button colorScheme='teal' mt={3} type="submit">Enviar</Button>}
         </InputGroup>
+        )}
       </>
     </form>
-  </FormControl>
+    </FormControl>
+
+    {formStep === 1 && (
+      <div className="container">
+        <div className="page-container">
+          <h1>Pagamento ingresso na plataforma</h1>
+          <Elements stripe={getStripe()}>
+            <FormDePagamento />
+          </Elements>
+        </div>
+      </div>
+    )}
+  </>
   )
 }
