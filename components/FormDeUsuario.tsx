@@ -5,7 +5,6 @@ import {
   Button,
   Spinner,
   Heading,
-  Select,
   InputGroup, 
   InputLeftElement,
   createStandaloneToast,
@@ -14,7 +13,7 @@ import {
 import { WarningIcon, EmailIcon, CalendarIcon, LockIcon, UnlockIcon } from '@chakra-ui/icons'
 import { FaUser } from 'react-icons/fa'
 import { useForm } from 'react-hook-form'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Elements } from '@stripe/react-stripe-js'
 import getStripe from '../utils/get-stripe'
 import FormDePagamento from '../components/FormDePagamento'
@@ -24,6 +23,11 @@ export const FormDeUsuario = (props) => {
   const { register, errors, handleSubmit, watch, reset } = useForm({
     mode: "all"
   })  
+
+  const nameIsFilled = watch('username')
+  const emailIsFilled = watch('email')
+  const passwordIsFilled = watch('password')
+  const password2IsFilled = watch('password2')
 
   const [submitting, setSubmitting] = useState(false)
   const [formStep, setFormStep] = useState(0)
@@ -39,6 +43,7 @@ export const FormDeUsuario = (props) => {
     <FormControl w={[300, 400, 500]}>
     <form onSubmit={handleSubmit(async(formData) => {
       setSubmitting(true)
+
       const response = await fetch(`http://localhost:1337/auth/local/register`, {
         method: "POST",
         headers: {
@@ -122,26 +127,40 @@ export const FormDeUsuario = (props) => {
           <Input variant="filled" type="password" name="password2" placeholder="Repetir senha" id="password2" ref={register({
             required: "Repetir senha obrigatorio",
             validate: (value) => value === watch('password') || "Senhas nao compativeis."
-          })}/>
+          })} />
           {errors.password2 ?(<small style={{ color: "red" }}> <WarningIcon /> {errors.password2.message}.</small>) : null}
         </InputGroup>
-        <FormLabel mt={1} htmlFor="eventos">Eventos</FormLabel>
-        <InputGroup flexDirection="column">
-        <InputLeftElement pointerEvents="none" children={<CalendarIcon />}/>
-          <Select variant="filled" color="gray.400" name="eventos" id="eventos" placeholder="&nbsp;&nbsp; &nbsp; Selecione evento" ref={register({
-            required: "Evento obrigatorio",
-          })}>
-            {props.events.map((item)=>{
-              return (
-                <option value={item.id} key={item.id}>&nbsp;&nbsp; &nbsp; {item.nome}</option>
-              )
-            })}
-          </Select>        
-          {errors.eventos &&(<small style={{ color: "red" }}> <WarningIcon /> {errors.eventos.message}.</small>)}    
-        </InputGroup>
-        <Button type='button' mt={3} mb={3} colorScheme='teal' onClick={completarPassoForm}>
-          Prossimo passo
+        
+        {errors.username ||
+         errors.email ||
+         errors.password ||
+         errors.password2 ||
+         !nameIsFilled ||
+         !emailIsFilled || 
+         !password2IsFilled ||
+         !passwordIsFilled
+          ?  <Button 
+          type='button' 
+          mt={3} 
+          mb={3} 
+          colorScheme='teal' 
+          disabled
+          >
+          Próximo passo
         </Button>
+          : (
+        <Button 
+          type='button' 
+          mt={3} 
+          mb={3} 
+          colorScheme='teal' 
+          onClick={completarPassoForm}
+          >
+          Próximo passo
+        </Button>
+        )
+        }
+
           <br/>
           <NextLink href="/login">
             <Link color="blue.300">Ja tenho uma conta. ➔</Link>
@@ -167,7 +186,7 @@ export const FormDeUsuario = (props) => {
         <Elements stripe={getStripe()}>
           <FormDePagamento prossimoPassoButton={(
             <Button type='button' mt={3} mb={3} colorScheme='teal' onClick={completarPassoForm}>
-              Prossimo passo
+              Próximo passo
             </Button>
           )}/>
         </Elements>
