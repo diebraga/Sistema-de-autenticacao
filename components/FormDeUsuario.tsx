@@ -8,7 +8,10 @@ import {
   InputGroup, 
   InputLeftElement,
   createStandaloneToast,
-  Link
+  Link,
+  Stack,
+  RadioGroup,
+  Radio
 } from "@chakra-ui/react"
 import { WarningIcon, EmailIcon, CalendarIcon, LockIcon, UnlockIcon } from '@chakra-ui/icons'
 import { FaUser } from 'react-icons/fa'
@@ -29,12 +32,12 @@ export const FormDeUsuario = (props) => {
   const passwordIsFilled = watch('password')
   const password2IsFilled = watch('password2')
 
+  const isParticipante = watch('participante')
+  const isOrganizador = watch('organizador')
+  const isPalestrante = watch('palestrante')
+
   const [submitting, setSubmitting] = useState(false)
   const [formStep, setFormStep] = useState(0)
-
-  const completarPassoForm = () => {
-    setFormStep(cur => cur + 1)
-  }
 
   const toast = createStandaloneToast()
 
@@ -89,6 +92,34 @@ export const FormDeUsuario = (props) => {
         {formStep === 0 && (
         <>
         <Heading as="h1">Faça seu cadastro 🚀</Heading>
+        
+        {isParticipante && (
+          setFormStep(cur => cur + 1)
+        )}
+
+        {isPalestrante && (
+          setFormStep(cur => cur + 2)
+        )}
+
+        {isOrganizador && (
+          setFormStep(cur => cur + 3)
+        )}
+
+        <InputGroup flexDirection="column">
+          <FormLabel mt={3} htmlFor="participante">
+          <input type="radio" name="participante" id="participante" ref={register()} placeholder='Participante'/>&nbsp;
+            Sou Participante
+          </FormLabel>
+          <FormLabel mt={3} htmlFor="palestrante">
+          <input type="radio" name="palestrante" id="palestrante" ref={register()} placeholder='Participante'/>&nbsp;
+            Sou Palestrante
+          </FormLabel>
+          <FormLabel mt={3} htmlFor="organizador">
+          <input type="radio" name="organizador" id="organizador" ref={register()} placeholder='Participante'/>&nbsp;
+            Sou Organizador
+          </FormLabel>
+        </InputGroup>
+
         <FormLabel mt={3} htmlFor="username">Nome</FormLabel>
         <InputGroup flexDirection="column">
           <InputLeftElement pointerEvents="none" children={<FaUser />}/>
@@ -154,7 +185,6 @@ export const FormDeUsuario = (props) => {
           mt={3} 
           mb={3} 
           colorScheme='teal' 
-          onClick={completarPassoForm}
           >
           Próximo passo
         </Button>
@@ -185,7 +215,7 @@ export const FormDeUsuario = (props) => {
         <Heading as='h1'>Pagamento ingresso na plataforma</Heading>
         <Elements stripe={getStripe()}>
           <FormDePagamento prossimoPassoButton={(
-            <Button type='button' mt={3} mb={3} colorScheme='teal' onClick={completarPassoForm}>
+            <Button type='button' mt={3} mb={3} colorScheme='teal'>
               Próximo passo
             </Button>
           )}/>
